@@ -7,7 +7,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    background-color: #121212;
+    background-color:lightseagreen;
     padding: 20px;
 }
 
@@ -27,6 +27,6 @@ footer {
     padding: 40px;
 }
 
-input#artwork-title {
+img#logo {
     width: 200px;
 }
