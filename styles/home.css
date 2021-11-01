@@ -1,1 +1,3 @@
-/* add home page styles here */
+input#artwork-title {
+    width: 200px;
+}

@@ -1,0 +1,10 @@
+#gallery-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gallery-thumb {
+    width: 100px;
+    padding: 10px;
+}
