@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#dev-profiles {
+    display: flex;
+    gap: 20px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    font-size: 12px;
+}
+
+.profile img {
+    border-radius: 50%;
+}
