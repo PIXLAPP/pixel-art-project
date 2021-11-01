@@ -1,0 +1,32 @@
+{
+  "name": "alchemy-bootstrap-template",
+  "version": "1.0.0",
+  "description": "(bolded steps are mandatory, unbolded are for more advanced projects)",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "http-server -p 5500",
+    "test": "cypress open",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpcairns/alchemy-bootstrap-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpcairns/alchemy-bootstrap-template/issues"
+  },
+  "homepage": "https://github.com/dpcairns/alchemy-bootstrap-template#readme",
+  "devDependencies": {
+    "cypress": "^8.5.0",
+    "eslint-plugin-cypress": "^2.12.1"
+  },
+  "dependencies": {
+    "http-server": "^13.0.2"
+  }
+}
