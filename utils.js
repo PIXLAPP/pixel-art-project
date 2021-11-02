@@ -23,3 +23,8 @@ export function createImage(title) {
     };
     return newImage;
 }
+
+export function updateImage(imageObject, colorArray) {
+    imageObject.colors = colorArray;
+    return imageObject;
+}
