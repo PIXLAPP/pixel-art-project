@@ -1,14 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Press+Start+2P&display=swap');
+
+:root {
+    --display-font: 'Press Start 2p', cursive;
+    --body-font: 'Fira Code', monospace;
+}
+
 body {
     display: flex;
     flex-direction: column;
     background-color: #fefefe;
+    font-family: var(--body-font);
+}
+
+a {
+    color: white;
+    font-family: var(--body-font);
+    font-size: 1.5vw;
 }
 
 header {
     display: flex;
     flex-direction: row;
-    background-color:lightseagreen;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 200px;
+    background-color: lightseagreen;
+    font-family: var(--display-font);
+    font-size: 1vw;
 }
 
 main {
@@ -22,11 +40,6 @@ main {
     color: #fefefe;
 }
 
-footer {
-    background-color: lightcoral;
-    padding: 40px;
-}
-
 img#logo {
-    width: 200px;
+    width: 150px;
 }
