@@ -1,4 +1,4 @@
-import { setStorage, getStorage } from '../utils.js';
+import { setStorage, getStorage, titleKey } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -8,11 +8,7 @@ test('setStorage should stringify the imageObject', (expect) => {
     const testObject = {
         height: 10,
         width: 10,
-        colors: [
-            '457431',
-            '03b213'
-        ]
-
+        colors: ['457431', '03b213'],
     };
 
     setStorage('TEST', testObject);
@@ -29,11 +25,7 @@ test('getStorage should return the imageObject', (expect) => {
     const testObject = {
         height: 10,
         width: 10,
-        colors: [
-            '457431',
-            '03b213'
-        ]
-
+        colors: ['457431', '03b213'],
     };
 
     const testString = JSON.stringify(testObject);
@@ -43,4 +35,16 @@ test('getStorage should return the imageObject', (expect) => {
     const expected = testObject;
 
     expect.deepEqual(actual, expected);
+});
+
+test('titleKey should remove spaces from image title and capitalize string', (expect) => {
+    //arrange
+    const imageTitle = 'title with spaces';
+    const expected = 'TITLEWITHSPACES';
+
+    //act
+    const actual = titleKey(imageTitle);
+
+    //expect
+    expect.equal(actual, expected);
 });
