@@ -52,6 +52,7 @@ export function renderImage(imageObject) {
     for (let i = 0; i < area; i++) {
         const pixel = document.createElement('div');
         pixel.style.backgroundColor = `#${colorArray[i]}`;
+        pixel.classList.add('pixel-div');
         canvas.append(pixel);
         
     }
