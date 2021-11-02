@@ -1,4 +1,4 @@
-import { setStorage, getStorage, titleKey } from '../utils.js';
+import { setStorage, getStorage, titleKey, createImage } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -47,4 +47,18 @@ test('titleKey should remove spaces from image title and capitalize string', (ex
 
     //expect
     expect.equal(actual, expected);
+});
+
+test('createImage should initialize a new image object', (expect) => {
+    const newImage = {
+        title: 'Awesome Artwork',
+        height: 10,
+        width: 10,
+        colors: [],
+    };
+    const newTitle = 'Awesome Artwork';
+
+    const actual = createImage(newTitle);
+
+    expect.deepEqual(newImage, actual);
 });

@@ -13,3 +13,13 @@ export function titleKey(imageTitle) {
     let noSpaceTitle = upperCaseTitle.replace(/ /g, '');
     return noSpaceTitle;
 }
+
+export function createImage(title) {
+    let newImage = {
+        title: title,
+        height: 10,
+        width: 10,
+        colors: [],
+    };
+    return newImage;
+}
