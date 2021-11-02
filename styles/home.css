@@ -1,17 +1,26 @@
+.hidden {
+    display: none;
+}
+
 .welcome-container {
     gap: 25px;
-    height: 250px;
+    height: 400px;
+    width: 400px;
     padding: 25px;
 }
 
-h2 {
-    font-family: var(--display-font);
-    font-size: 2vw;
+.welcome-container__logo {
+    width: 200px;
+}
+
+.welcome-container a {
+    font-size: 10px;
     margin: 0;
 }
 
 #welcome-message {
     margin: 0;
+    text-align: center;
 }
 
 #artwork-title {
