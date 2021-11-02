@@ -16,18 +16,13 @@ export function titleKey(imageTitle) {
 
 export function createImage(title, height, width) {
     let area = height * width;
-    let halfArea = area / 2;
+    // let halfArea = area / 2;
+    let thirdArea = Math.ceil(area / 3);
     let colorArray = [];
-    // if (area % 2 === 0) {
-    //     colorArray.push('000000');
-    //     for (let i = 0; i < halfArea; i++) {
-    //         colorArray.push('D8D8D9', 'FEFFFE',);  
-    //     } 
-    // } else { 
-    for (let i = 0; i < halfArea; i++) {  
+    
+    for (let i = 0; i < thirdArea; i++) {  
         colorArray.push('D8D8D9', 'FEFFFE', 'f3f3f4'); 
     }
-    
     
     let newImage = {
         title: title,
