@@ -30,3 +30,18 @@
 #submit-title {
     width: 20%;
 }
+
+.canvas-container {
+    height: 500px;
+    width: 500px;
+}
+
+#canvas {
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    z-index: top;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
