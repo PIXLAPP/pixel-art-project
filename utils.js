@@ -18,10 +18,17 @@ export function createImage(title, height, width) {
     let area = height * width;
     let halfArea = area / 2;
     let colorArray = [];
-    for (let i = 0; i < halfArea; i++) {
-        colorArray.push('D8D8D9', 'FEFFFE',);  
+    // if (area % 2 === 0) {
+    //     colorArray.push('000000');
+    //     for (let i = 0; i < halfArea; i++) {
+    //         colorArray.push('D8D8D9', 'FEFFFE',);  
+    //     } 
+    // } else { 
+    for (let i = 0; i < halfArea; i++) {  
+        colorArray.push('D8D8D9', 'FEFFFE', 'f3f3f4'); 
     }
-   
+    
+    
     let newImage = {
         title: title,
         height: 10,
@@ -30,6 +37,7 @@ export function createImage(title, height, width) {
     };
 
     return newImage;
+    
 }
 
 export function updateImage(imageObject, colorArray) {
