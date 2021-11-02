@@ -1,6 +1,6 @@
 # Pixel Art 
 ## Project Description
-Pixel Art (app name) is an application that allows the user to select grid section and modify its color to create a piece of pixel art. Users will be able to save and display their artwork on a gallery page via local storage. 
+PIXL is an application that allows the user to select grid section and modify its color to create a piece of pixel art. Users will be able to save and display their artwork on a gallery page via local storage. 
 
 ## Problem Domain & Solution
 TBD 
