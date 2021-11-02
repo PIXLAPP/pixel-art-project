@@ -1,10 +1,18 @@
-#gallery-container {
+.gallery-container {
+    height: 350px;
+    width: 550px;
+}
+
+h2 {
+    margin: 0 0 50px 0;
+}
+
+.gallery-container__cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 25px;
 }
 
 .gallery-thumb {
-    width: 100px;
-    padding: 10px;
+    width: 125px;
 }

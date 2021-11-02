@@ -1,3 +1,23 @@
-input#artwork-title {
-    width: 200px;
+.welcome-container {
+    gap: 25px;
+    height: 250px;
+    padding: 25px;
+}
+
+h2 {
+    font-family: var(--display-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+#welcome-message {
+    margin: 0;
+}
+
+#artwork-title {
+    width: 40%;
+}
+
+#submit-title {
+    width: 20%;
 }

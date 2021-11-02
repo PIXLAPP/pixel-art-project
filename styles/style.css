@@ -8,7 +8,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: #fefefe;
+    background-color: #2a2730;
     font-family: var(--body-font);
 }
 
@@ -24,20 +24,30 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px 200px;
-    background-color: lightseagreen;
+    background-color: #64dfdf;
     font-family: var(--display-font);
     font-size: 1vw;
+}
+
+h2 {
+    font-family: var(--display-font);
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-content: center;
-    text-align: center;
-    width: 400px;
     margin: auto;
-    background-color: #121212;
-    color: #fefefe;
+}
+
+.module {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    color: white;
+    background-color: #64dfdf;
 }
 
 img#logo {

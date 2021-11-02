@@ -4,18 +4,37 @@ main {
     width: 100%;
 }
 
-#dev-profiles {
+.profile-container {
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.profile-container h2 {
+    margin-bottom: 50px;
+}
+
+.profile-container__cards {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    gap: 25px;
+    color: #2a2730;
 }
 
 .profile {
     display: flex;
     flex-direction: column;
-    width: 100px;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
     font-size: 12px;
 }
 
+.profile a {
+    font-size: 10px;
+}
+
 .profile img {
+    height: 125px;
+    width: 125px;
     border-radius: 50%;
 }
