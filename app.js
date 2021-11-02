@@ -1,3 +1,5 @@
-import { createImage } from './utils.js';
+import { createImage, renderImage } from './utils.js';
 
-createImage('coolName', 10, 10);
+const testCanvas = createImage('coolTitle', 10, 10);
+renderImage(testCanvas);
+

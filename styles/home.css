@@ -40,7 +40,6 @@
     background-color: white;
     height: 400px;
     width: 400px;
-    z-index: top;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
