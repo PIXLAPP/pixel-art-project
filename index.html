@@ -17,13 +17,13 @@
     </head>
 
     <body>
-        <header class="hidden">
+        <header>
             <a href="./gallery">Gallery</a>
             <img src="./assets/PIXL-white.png" id="logo" />
             <a href="./about">About</a>
         </header>
         <main>
-            <section class="welcome-container module">
+            <section class="welcome-container module hidden">
                 <img
                     src="./assets/PIXL-white.png"
                     alt=""
@@ -41,6 +41,11 @@
                     placeholder="Canvas Title"
                 />
                 <button id="submit-title">START</button>
+            </section>
+            <section id="canvas-container" class="canvas-container module">
+                <div id="canvas">
+                    <!-- this is where the art goes -->
+                </div>
             </section>
         </main>
 
