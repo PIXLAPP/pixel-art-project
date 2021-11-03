@@ -91,3 +91,22 @@ for (let i = 0; i < canvasDivs.length; i++) {
         }
     });
 }
+ 
+const rainbowArray = ['#f54242', '#f59642', '#f5e942', '#84f542', '#42ddf5', '#b15beb', '#f779b4'];
+let rainbowIndex = 0;
+for (let i = 0; i < canvasDivs.length; i++) {
+    canvasDivs[i].addEventListener('click', () => {
+        const selectedTool = document.querySelector(
+            'input[type=radio]:checked'
+        );
+        if (selectedTool.id === 'rainbow') {
+            if (rainbowIndex === 7) {
+                rainbowIndex = 0;
+            } else {
+                canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
+                rainbowIndex++;
+            } 
+            
+        }
+    });
+}
