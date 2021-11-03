@@ -1,4 +1,4 @@
-import { getStorage } from '../utils.js';
+import { getStorage, setStorage } from '../utils.js';
 
 const keysObject = getStorage('KEYS');
 const keys = keysObject.keys;
@@ -12,15 +12,21 @@ function renderGalleryImage(imageObject) {
         const pixel = document.createElement('div');
         pixel.style.backgroundColor = colorArray[i];
         pixel.classList.add('pixel-div');
-        canvas.append(pixel); 
+        canvas.append(pixel);
     }
     return canvas;
 }
+
+localStorage.removeItem('ACTIVEIMAGE');
 
 for (let key of keys) {
     const galleryImageObject = getStorage(key);
     const galleryCard = document.createElement('div');
     galleryCard.classList.add('gallery-card');
+    galleryCard.addEventListener('click', () => {
+        setStorage('ACTIVEIMAGE', key);
+        window.location.replace('../index.html');
+    });
     const galleryCanvas = renderGalleryImage(galleryImageObject);
     galleryCanvas.classList.add('gallery-canvas');
     const cardTitle = document.createElement('p');
@@ -29,16 +35,3 @@ for (let key of keys) {
 
     galleryContainer.append(galleryCard);
 }
-// loop through array of KEYS to access all imageObjects in local storage
-// call a refactored renderImage function on each object
-//     - Create smaller canvas div, 
-//           - to contain colored divs
-
-// Template for gallery card
-{/* <div class="gallery-card">
-<img
-    src="../assets/pixel-img.png"
-    class="gallery-thumb"
-/>
-<p class="title">My Kitty</p>
-</div> */}
