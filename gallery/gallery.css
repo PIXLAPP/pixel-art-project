@@ -16,3 +16,16 @@ h2 {
 .gallery-thumb {
     width: 125px;
 }
+
+.pixel-div {
+    width: 10px;
+    height: 10px;
+}
+
+.gallery-canvas {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    height: 100px;
+    width: 100px;
+}
