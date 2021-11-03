@@ -17,18 +17,17 @@
     </head>
 
     <body>
-        <header>
+        <header class="header hidden">
             <a href="./gallery">Gallery</a>
-            <img src="./assets/PIXL-white.png" id="logo" />
+            <img src="./assets/PIXL-white.png" id="logo">
             <a href="./about">About</a>
         </header>
         <main>
-            <section class="welcome-container module hidden">
+            <section class="welcome-container module">
                 <img
                     src="./assets/PIXL-white.png"
                     alt=""
-                    class="welcome-container__logo"
-                />
+                    class="welcome-container__logo"/>
                 <a href="./gallery">View Gallery</a>
                 <p id="welcome-message">
                     Welcome to PIXL! Make some pixel-y art by using the tools to
@@ -42,9 +41,9 @@
                 />
                 <button id="submit-title">START</button>
             </section>
-            <section id="canvas-container" class="canvas-container module">
+            <section id="canvas-container" class="canvas-container module hidden">
+                <h2 id="display-title"></h2>
                 <div id="canvas">
-                    <!-- this is where the art goes -->
                 </div>
                 <label>
                     <input type="radio" name="tools" id="pencil">
@@ -53,7 +52,8 @@
                 <label>
                     <input type="radio" name="tools" id="eraser">
                     Eraser
-                </label>                
+                </label>
+                <button id="save-image">Save</button>              
             </section>
         </main>
 

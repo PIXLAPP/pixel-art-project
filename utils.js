@@ -10,24 +10,19 @@ export function getStorage(key) {
 
 export function titleKey(imageTitle) {
     let upperCaseTitle = imageTitle.toUpperCase();
-    let noSpaceTitle = upperCaseTitle.replace(/ /g, '');
+    let noSpaceTitle = upperCaseTitle.replace(/[^a-zA-Z0-9]/g, '');
     return noSpaceTitle;
 }
 
 export function createImage(title, height, width) {
     let area = height * width;
-    let halfArea = area / 2;
+    // let halfArea = area / 2;
+    let thirdArea = Math.ceil(area / 3);
     let colorArray = [];
-    // if (area % 2 === 0) {
-    //     colorArray.push('000000');
-    //     for (let i = 0; i < halfArea; i++) {
-    //         colorArray.push('D8D8D9', 'FEFFFE',);  
-    //     } 
-    // } else { 
-    for (let i = 0; i < halfArea; i++) {  
+
+    for (let i = 0; i < thirdArea; i++) {  
         colorArray.push('D8D8D9', 'FEFFFE', 'f3f3f4'); 
     }
-    
     
     let newImage = {
         title: title,
@@ -35,9 +30,7 @@ export function createImage(title, height, width) {
         width: 10,
         colors: colorArray,
     };
-
-    return newImage;
-    
+    return newImage;    
 }
 
 export function updateImage(imageObject, colorArray) {
@@ -53,7 +46,6 @@ export function renderImage(imageObject) {
         const pixel = document.createElement('div');
         pixel.style.backgroundColor = `#${colorArray[i]}`;
         pixel.classList.add('pixel-div');
-        canvas.append(pixel);
-        
+        canvas.append(pixel);  
     }
 }
