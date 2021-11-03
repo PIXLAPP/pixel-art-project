@@ -40,8 +40,6 @@
     align-items: center;
     border-radius: 5%;
     color: white;
-    
-    /* background-color: #64dfdf; */
     background-color: rgba(42, 39, 48, 0.45);
 }
 
@@ -102,9 +100,7 @@ input[type="color"]::-webkit-color-swatch {
     background-color: transparent;
     border: none;
     height: auto;
-    width: auto;
-    
-    
+    width: auto;   
 }
 
 .clear-canvas img {
