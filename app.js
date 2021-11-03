@@ -18,9 +18,16 @@ const welcomeModule = document.querySelector('.welcome-container');
 const displayTitle = document.getElementById('display-title');
 const saveBtn = document.getElementById('save-image');
 const clearBtn = document.querySelector('.clear-canvas');
+const colorSelect = document.getElementById('color-select');
+const startBtn = document.getElementById('submit-title');
 
 const eraserBackgroundCanvas = createImage('eraser background', 10, 10);
 const eraserColorArray = eraserBackgroundCanvas.colors;
+
+startBtn.addEventListener('click', ()=>{
+    const pencil = document.getElementById('pencil');
+    pencil.checked = true;
+});
 
 submitBtn.addEventListener('click', () => {
     let titleString = artworkTitle.value;
@@ -61,7 +68,7 @@ for (let i = 0; i < canvasDivs.length; i++) {
             'input[type=radio]:checked'
         );
         if (selectedTool.id === 'pencil') {
-            canvasDivs[i].style.backgroundColor = 'black';
+            canvasDivs[i].style.backgroundColor = colorSelect.value;
         } else if (selectedTool.id === 'eraser') {
             canvasDivs[i].style.backgroundColor = eraserColorArray[i];
         }
