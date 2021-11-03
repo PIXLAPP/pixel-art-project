@@ -20,6 +20,7 @@ function renderGalleryImage(imageObject) {
 for (let key of keys) {
     const galleryImageObject = getStorage(key);
     const galleryCard = document.createElement('div');
+    galleryCard.classList.add('gallery-card');
     const galleryCanvas = renderGalleryImage(galleryImageObject);
     galleryCanvas.classList.add('gallery-canvas');
     const cardTitle = document.createElement('p');

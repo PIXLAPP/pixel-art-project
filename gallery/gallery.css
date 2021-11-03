@@ -1,16 +1,23 @@
 .gallery-container {
-    height: 350px;
+    margin: 50px 0 50px 0;
+    height: auto;
     width: 550px;
 }
 
 h2 {
-    margin: 0 0 50px 0;
+    margin: 50px 0 50px 0;
+    
 }
 
 .gallery-container__cards {
     display: flex;
     flex-direction: row;
     gap: 25px;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
 }
 
 .gallery-thumb {
@@ -28,4 +35,13 @@ h2 {
     grid-template-rows: repeat(10, 1fr);
     height: 100px;
     width: 100px;
+}
+
+.gallery-card {
+    text-align: center;
+     width: 110px;
+}
+
+.gallery-card p {
+    overflow-wrap: break-word;
 }

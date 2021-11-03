@@ -32,15 +32,68 @@
 }
 
 .canvas-container {
-    height: 500px;
-    width: 500px;
+    height: auto;
+    width: 600px;
+    margin: 50px 0 50px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    color: white;
+    
+    /* background-color: #64dfdf; */
+    background-color: rgba(42, 39, 48, 0.45);
 }
 
 #canvas {
     background-color: white;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
+}
+
+#display-title {
+    overflow-wrap: break-word;
+    width: 80%;
+    text-align: center;
+}
+
+label img {
+    width: 25px;
+}
+
+input[type=radio] {
+display: none;
+}
+input[type=radio]:checked + img {
+filter: drop-shadow(2px 2px 1px rgb(128,255,216,1) ) 
+}
+
+.toolchest {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0 25px 0;
+}
+
+#save-image {
+    margin: 10px 0 25px 0;
+}
+
+.clear-canvas{
+    background-color: transparent;
+    border: none;
+    height: auto;
+    width: auto;
+    
+    
+}
+
+.clear-canvas img {
+    width: 25px;
+}
+
+.clear-canvas:active {
+    filter: drop-shadow(2px 2px 2px rgb(3, 3, 3) )
 }

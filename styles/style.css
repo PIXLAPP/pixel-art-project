@@ -58,3 +58,14 @@ main {
 img#logo {
     width: 150px;
 }
+
+button {
+    font-family: var(--display-font);
+    font-size:  10px;
+    background-color: #6A60CE;
+    height: 45px;
+    width: 150px;
+    color: white;
+    border: 0;
+    border-radius: 15px;
+}
