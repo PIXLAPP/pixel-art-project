@@ -67,8 +67,25 @@ label img {
 input[type=radio] {
 display: none;
 }
+
 input[type=radio]:checked + img {
 filter: drop-shadow(2px 2px 1px rgb(128,255,216,1) ) 
+}
+
+input[type=color] {
+    border: 0px;
+    background-color: transparent;
+    -webkit-appearance: none;
+	border: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+    display: none;
 }
 
 .toolchest {
