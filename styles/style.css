@@ -8,8 +8,11 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: #2a2730;
+    /* background-color: #2a2730; */
     font-family: var(--body-font);
+    background: rgb(116,0,184);
+    background: linear-gradient(132deg, rgba(116,0,184,1) 0%, rgba(78,168,222,1) 66%, rgba(128,255,216,1) 100%);
+    background-attachment: fixed;
 }
 
 a {
@@ -24,7 +27,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px 200px;
-    background-color: #64dfdf;
+    /* background-color: #64dfdf; */
+    background-color: rgba(42, 39, 48, 0.6);
     font-family: var(--display-font);
     font-size: 1vw;
 }
@@ -47,7 +51,8 @@ main {
     align-items: center;
     border-radius: 5%;
     color: white;
-    background-color: #64dfdf;
+    /* background-color: #64dfdf; */
+    background-color: rgba(42, 39, 48, 0.45);
 }
 
 img#logo {
