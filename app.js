@@ -10,7 +10,7 @@ import {
 const currentCanvas = createImage('coolTitle', 10, 10);
 renderImage(currentCanvas);
 const canvasDivs = document.querySelectorAll('.pixel-div');
-const submitBtn = document.getElementById('submit-title');
+const startBtn = document.getElementById('submit-title');
 const artworkTitle = document.getElementById('artwork-title');
 const header = document.querySelector('.header');
 const canvasModule = document.getElementById('canvas-container');
@@ -19,27 +19,29 @@ const displayTitle = document.getElementById('display-title');
 const saveBtn = document.getElementById('save-image');
 const clearBtn = document.querySelector('.clear-canvas');
 const colorSelect = document.getElementById('color-select');
-const startBtn = document.getElementById('submit-title');
 
 const eraserBackgroundCanvas = createImage('eraser background', 10, 10);
 const eraserColorArray = eraserBackgroundCanvas.colors;
 
-startBtn.addEventListener('click', ()=>{
-    const pencil = document.getElementById('pencil');
-    pencil.checked = true;
-});
-
-submitBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', () => {
     let titleString = artworkTitle.value;
     const title = titleKey(titleString);
     const newImage = createImage(titleString, 10, 10);
-
+    
     setStorage(title, newImage);
-
+    // push title to array in KEYS object
+    const keyArrayObject = getStorage('KEYS') || { keys: [] };
+    const keyArray = keyArrayObject.keys;
+    keyArray.push(title);
+    setStorage('KEYS', keyArrayObject);
+    
     welcomeModule.classList.add('hidden');
     header.classList.remove('hidden');
     canvasModule.classList.remove('hidden');
     displayTitle.textContent = titleString;
+    
+    const pencil = document.getElementById('pencil');
+    pencil.checked = true;
 });
 
 clearBtn.addEventListener('click', () => {
