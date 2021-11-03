@@ -21,7 +21,7 @@ export function createImage(title, height, width) {
     let colorArray = [];
 
     for (let i = 0; i < thirdArea; i++) {  
-        colorArray.push('D8D8D9', 'FEFFFE', 'f3f3f4'); 
+        colorArray.push('rgb(216, 216, 217)', 'rgb(254, 255, 254)', 'rgb(243, 243, 244)',); 
     }
     
     let newImage = {
@@ -44,7 +44,7 @@ export function renderImage(imageObject) {
     const area = imageObject.height * imageObject.width;
     for (let i = 0; i < area; i++) {
         const pixel = document.createElement('div');
-        pixel.style.backgroundColor = `#${colorArray[i]}`;
+        pixel.style.backgroundColor = colorArray[i];
         pixel.classList.add('pixel-div');
         canvas.append(pixel);  
     }

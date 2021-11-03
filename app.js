@@ -1,4 +1,4 @@
-import { createImage, renderImage, setStorage, titleKey } from './utils.js';
+import { createImage, getStorage, renderImage, setStorage, titleKey, updateImage } from './utils.js';
 
 const currentCanvas = createImage('coolTitle', 10, 10);
 renderImage(currentCanvas);
@@ -27,15 +27,21 @@ submitBtn.addEventListener('click', ()=>{
     displayTitle.textContent = titleString;
 });
 
-// saveBtn.addEventListener('click', ()=>{
-//     let key = titleKey(displayTitle);
+saveBtn.addEventListener('click', ()=>{
+    let key = titleKey(displayTitle.textContent);
+    let imageObject = getStorage(key);
+    let colorArray = [];
+    for (let i = 0; i < canvasDivs.length; i++) {
+        colorArray.push(canvasDivs[i].style.backgroundColor);
+    }
+    const updatedImage = updateImage(imageObject, colorArray);
+    setStorage(key, updatedImage);
+    window.location.replace('./gallery/index.html');
 
-//     //getstorage w/titleKey 
-//     // updateImage
-//     //setStorage
-//     //redirect to gallery
+    
 
-// });
+
+});
 
 for (let i = 0; i < canvasDivs.length; i++) {
     canvasDivs[i].addEventListener('click', () => {
@@ -43,7 +49,7 @@ for (let i = 0; i < canvasDivs.length; i++) {
         if (selectedTool.id === 'pencil') {
             canvasDivs[i].style.backgroundColor = 'black';
         } else if (selectedTool.id === 'eraser') {
-            canvasDivs[i].style.backgroundColor = `#${eraserColorArray[i]}`;
+            canvasDivs[i].style.backgroundColor = eraserColorArray[i];
         }
     });
 }
