@@ -45,14 +45,22 @@
                 <h2 id="display-title"></h2>
                 <div id="canvas">
                 </div>
-                <label>
-                    <input type="radio" name="tools" id="pencil">
-                    Pencil
-                </label>
-                <label>
-                    <input type="radio" name="tools" id="eraser">
-                    Eraser
-                </label>
+                <div class="tool-chest">
+                    <div class="tool-box">
+                        <label>
+                            <input type="radio" name="tools" id="pencil">
+                            Pencil
+                        </label>
+                        <label>
+                            <input type="radio" name="tools" id="eraser">
+                            Eraser
+                        </label>
+                    </div>
+                    <div class="tool-box">
+                        <button id="undo-button">Undo</button>
+                        <button id="redo-button">Redo</button>
+                    </div>
+                </div>
                 <button id="save-image">Save</button>              
             </section>
         </main>

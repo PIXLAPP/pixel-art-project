@@ -10,6 +10,9 @@ const canvasModule = document.getElementById('canvas-container');
 const welcomeModule = document.querySelector('.welcome-container');
 const displayTitle = document.getElementById('display-title');
 const saveBtn = document.getElementById('save-image');
+const undoButton = document.getElementById('undo-button');
+const redoButton = document.getElementById('redo-button');
+
 
 const eraserBackgroundCanvas = createImage('eraser background', 10, 10);
 const eraserColorArray = eraserBackgroundCanvas.colors;

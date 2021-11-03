@@ -44,3 +44,17 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
 }
+
+.tool-box {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20px;
+}
+
+.tool-chest {
+    display: flex;
+}
+
+.tool-box *, #save-image {
+    margin: 5px;
+}
