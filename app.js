@@ -1,4 +1,11 @@
-import { createImage, getStorage, renderImage, setStorage, titleKey, updateImage } from './utils.js';
+import {
+    createImage,
+    getStorage,
+    renderImage,
+    setStorage,
+    titleKey,
+    updateImage,
+} from './utils.js';
 
 const currentCanvas = createImage('coolTitle', 10, 10);
 renderImage(currentCanvas);
@@ -10,11 +17,12 @@ const canvasModule = document.getElementById('canvas-container');
 const welcomeModule = document.querySelector('.welcome-container');
 const displayTitle = document.getElementById('display-title');
 const saveBtn = document.getElementById('save-image');
+const clearBtn = document.querySelector('.clear-canvas');
 
 const eraserBackgroundCanvas = createImage('eraser background', 10, 10);
 const eraserColorArray = eraserBackgroundCanvas.colors;
 
-submitBtn.addEventListener('click', ()=>{
+submitBtn.addEventListener('click', () => {
     let titleString = artworkTitle.value;
     const title = titleKey(titleString);
     const newImage = createImage(titleString, 10, 10);
@@ -27,7 +35,15 @@ submitBtn.addEventListener('click', ()=>{
     displayTitle.textContent = titleString;
 });
 
-saveBtn.addEventListener('click', ()=>{
+clearBtn.addEventListener('click', () => {
+    const imageObject = document.querySelectorAll('.pixel-div');
+    let objectArray = Array.from(imageObject);
+    for (let i = 0; i < objectArray.length; i++) {
+        objectArray[i].style.backgroundColor = eraserColorArray[i];
+    }
+});
+
+saveBtn.addEventListener('click', () => {
     let key = titleKey(displayTitle.textContent);
     let imageObject = getStorage(key);
     let colorArray = [];
@@ -37,15 +53,13 @@ saveBtn.addEventListener('click', ()=>{
     const updatedImage = updateImage(imageObject, colorArray);
     setStorage(key, updatedImage);
     window.location.replace('./gallery/index.html');
-
-    
-
-
 });
 
 for (let i = 0; i < canvasDivs.length; i++) {
     canvasDivs[i].addEventListener('click', () => {
-        const selectedTool = document.querySelector('input[type=radio]:checked');
+        const selectedTool = document.querySelector(
+            'input[type=radio]:checked'
+        );
         if (selectedTool.id === 'pencil') {
             canvasDivs[i].style.backgroundColor = 'black';
         } else if (selectedTool.id === 'eraser') {
