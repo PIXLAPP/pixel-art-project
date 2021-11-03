@@ -9,6 +9,7 @@ const header = document.querySelector('.header');
 const canvasModule = document.getElementById('canvas-container');
 const welcomeModule = document.querySelector('.welcome-container');
 const displayTitle = document.getElementById('display-title');
+const saveBtn = document.getElementById('save-image');
 
 const eraserBackgroundCanvas = createImage('eraser background', 10, 10);
 const eraserColorArray = eraserBackgroundCanvas.colors;
@@ -25,6 +26,16 @@ submitBtn.addEventListener('click', ()=>{
     canvasModule.classList.remove('hidden');
     displayTitle.textContent = titleString;
 });
+
+// saveBtn.addEventListener('click', ()=>{
+//     let key = titleKey(displayTitle);
+
+//     //getstorage w/titleKey 
+//     // updateImage
+//     //setStorage
+//     //redirect to gallery
+
+// });
 
 for (let i = 0; i < canvasDivs.length; i++) {
     canvasDivs[i].addEventListener('click', () => {
