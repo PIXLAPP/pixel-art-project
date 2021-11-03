@@ -67,11 +67,14 @@ display: none;
 }
 
 input[type=radio]:checked + img {
-filter: drop-shadow(2px 2px 1px rgb(128,255,216,1) ) 
+filter: drop-shadow(2px 2px 1px rgb(128,255,216,1) );
+padding: 0px;
+margin: 0px;
 }
 
 input[type=color] {
     border: 0px;
+    width: 0px;
     background-color: transparent;
     -webkit-appearance: none;
 	border: none;
@@ -88,23 +91,30 @@ input[type="color"]::-webkit-color-swatch {
 
 .toolchest {
     display: flex;
-    gap: 30px;
-    margin: 25px 0 25px 0;
+    justify-content: space-between;
+    vertical-align: middle;
+    width: 200px;
+    margin: auto;
+    padding: 10px;
 }
 
 #save-image {
-    margin: 10px 0 25px 0;
+    margin: 0px 0px 15px 0px;
+    font-size: 1rem;
+    letter-spacing: 3px;
 }
 
 .clear-canvas{
     background-color: transparent;
     border: none;
     height: auto;
-    width: auto;   
+    width: auto;  
 }
 
 .clear-canvas img {
     width: 25px;
+    padding: 0px;
+    margin-bottom: 3px;
 }
 
 .clear-canvas:active {
