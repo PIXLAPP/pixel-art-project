@@ -19,14 +19,14 @@ const artworkTitle = document.getElementById('artwork-title');
 const clearBtn = document.querySelector('.clear-canvas');
 const colorSelect = document.getElementById('color-select');
 const saveBtn = document.getElementById('save-image');
-let eraserBackgroundCanvas = {};
 const pencil = document.getElementById('pencil');
 const heightInput = document.getElementById('height-input');
 const widthInput = document.getElementById('width-input');
 const homePageLogo = document.getElementById('logo');
 const rainbowArray = ['#f54242', '#f59642', '#f5e942', '#84f542', '#42ddf5', '#b15beb', '#f779b4'];
+const paletteBtn = document.getElementById('color-select-img');
 let rainbowIndex = 0;
-
+let eraserBackgroundCanvas = {};
 let mousedown = 0;
 document.body.onmousedown = function(){
     mousedown++;
@@ -170,23 +170,6 @@ saveBtn.addEventListener('click', () => {
     window.location.replace('./gallery/index.html');
 });
 
-    
-// for (let i = 0; i < canvasDivs.length; i++) {
-//     canvasDivs[i].addEventListener('click', () => {
-//         const selectedTool = document.querySelector(
-//             'input[type=radio]:checked'
-//         );
-//         if (selectedTool.id === 'rainbow') {
-//             if (rainbowIndex === 7) {
-//                 rainbowIndex = 0;
-//                 canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
-//                 rainbowIndex++;
-//             } else {
-//                 canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
-//                 rainbowIndex++;
-//             } 
-                    
-//         }
-//     });
-// }
-        
+paletteBtn.addEventListener('click', ()=>{
+    pencil.checked = true;
+});
