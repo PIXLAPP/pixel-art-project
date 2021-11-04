@@ -27,6 +27,13 @@ const homePageLogo = document.getElementById('logo');
 const rainbowArray = ['#f54242', '#f59642', '#f5e942', '#84f542', '#42ddf5', '#b15beb', '#f779b4'];
 let rainbowIndex = 0;
 
+let mousedown = 0;
+document.body.onmousedown = function(){
+    mousedown++;
+};
+document.body.onmouseup = function(){
+    mousedown--;
+};
 
 if (!localStorage.getItem('ACTIVEIMAGE')) {
     localStorage.removeItem('ACTIVEIMAGE');
@@ -120,25 +127,25 @@ startBtn.addEventListener('click', () => {
     
         canvasDivs = document.querySelectorAll('.pixel-div');
         for (let i = 0; i < canvasDivs.length; i++) {
-            canvasDivs[i].addEventListener('click', () => {
-                const selectedTool = document.querySelector(
-                    'input[type=radio]:checked'
-                );
-                if (selectedTool.id === 'pencil') {
-                    canvasDivs[i].style.backgroundColor = colorSelect.value;
-                } else if (selectedTool.id === 'eraser') {
-                    canvasDivs[i].style.backgroundColor = eraserBackgroundCanvas.colors[i];
-                } else if (selectedTool.id === 'rainbow') {
-                    if (rainbowIndex === 7) {
-                        rainbowIndex = 0;
-                        canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
-                        rainbowIndex++;
-                    } else {
-                        canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
-                        rainbowIndex++;
-                    }          
-                }
-            });
+             canvasDivs[i].addEventListener('mouseenter', () => {
+            const selectedTool = document.querySelector(
+                'input[type=radio]:checked'
+            );
+            if (mousedown) {
+            if (selectedTool.id === 'pencil') {
+                canvasDivs[i].style.backgroundColor = colorSelect.value;
+            } else if (selectedTool.id === 'eraser') {
+                canvasDivs[i].style.backgroundColor = eraserBackgroundCanvas.colors[i];
+            } else if (selectedTool.id === 'rainbow') {
+                if (rainbowIndex === 7) {
+                    rainbowIndex = 0;
+                    canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
+                    rainbowIndex++;
+                } else {
+                    canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
+                    rainbowIndex++;
+                } } 
+            }});
         }
         pencil.checked = true;
     }});
