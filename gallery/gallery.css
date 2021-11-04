@@ -24,8 +24,8 @@ h2 {
 }
 
 .pixel-div {
-    width: 10px;
-    height: 10px;
+    width: auto;
+    height: auto;
 }
 
 .gallery-canvas {

@@ -53,6 +53,8 @@ main {
     color: white;
     /* background-color: #64dfdf; */
     background-color: rgba(42, 39, 48, 0.45);
+    /* height: auto;
+    width: auto; */
 }
 
 img#logo {

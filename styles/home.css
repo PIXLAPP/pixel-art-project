@@ -37,7 +37,7 @@ input[type=number] {
 
 .canvas-container {
     height: auto;
-    width: 600px;
+    width: auto;
     margin: 50px 0 50px 0px;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +52,7 @@ input[type=number] {
     height: 500px;
     width: 500px;
     display: grid;
+    margin: 0px 50px 0px 50px;
 }
 
 #display-title {
@@ -61,7 +62,7 @@ input[type=number] {
 }
 
 label img {
-    width: 25px;
+    width: 50px;
 }
 
 input[type=radio] {
@@ -93,11 +94,17 @@ input[type="color"]::-webkit-color-swatch {
 
 .toolchest {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    vertical-align: middle;
-    width: 200px;
+    width: 75px;
+    height: 95%;
     margin: auto;
     padding: 10px;
+}
+
+.color-tools {
+    display: flex;
+    flex-direction: row;
 }
 
 #save-image {
@@ -114,7 +121,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .clear-canvas img {
-    width: 25px;
+    width: 50px;
     padding: 0px;
     margin-bottom: 3px;
 }
@@ -132,4 +139,8 @@ input[type="color"]::-webkit-color-swatch {
     flex-direction: column;
     gap: 10px;
     align-items: flex-end;
+}
+
+.inner-canvas {
+    display:flex;
 }
