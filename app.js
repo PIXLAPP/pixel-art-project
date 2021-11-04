@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
     createImage,
     getStorage,
@@ -42,11 +43,20 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
     renderImage(activeImageObject);
     let canvasDivs = document.querySelectorAll('.pixel-div');
     rainbowIndex = 0;
+    
+    let mousedown = 0;
+    document.body.onmousedown = function(){
+        mousedown++;
+    };
+    document.body.onmouseup = function(){
+        mousedown--;
+    };
     for (let i = 0; i < canvasDivs.length; i++) {
-        canvasDivs[i].addEventListener('click', () => {
+        canvasDivs[i].addEventListener('mouseenter', () => {
             const selectedTool = document.querySelector(
                 'input[type=radio]:checked'
             );
+            if (mousedown) {
             if (selectedTool.id === 'pencil') {
                 canvasDivs[i].style.backgroundColor = colorSelect.value;
             } else if (selectedTool.id === 'eraser') {
@@ -59,10 +69,11 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
                 } else {
                     canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
                     rainbowIndex++;
-                }   
+                } } 
             }});
     }
     pencil.checked = true;
+
 }
 let canvasDivs = document.querySelectorAll('.pixel-div');
 
