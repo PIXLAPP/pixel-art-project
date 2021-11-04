@@ -56,11 +56,9 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
     let mousedown = 0;
     document.body.onmousedown = function(){
         mousedown++;
-        console.log('again');
     };
     document.body.onmouseup = function(){
         mousedown = 0;
-        console.log('mouse up');
     };
 
     document.body.oncontextmenu = function(){
