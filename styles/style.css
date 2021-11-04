@@ -8,17 +8,21 @@
 body {
     display: flex;
     flex-direction: column;
-    /* background-color: #2a2730; */
     font-family: var(--body-font);
-    background: rgb(116,0,184);
-    background: linear-gradient(132deg, rgba(116,0,184,1) 0%, rgba(78,168,222,1) 66%, rgba(128,255,216,1) 100%);
+    background: rgb(116, 0, 184);
+    background: linear-gradient(
+        132deg,
+        rgba(116, 0, 184, 1) 0%,
+        rgba(78, 168, 222, 1) 66%,
+        rgba(128, 255, 216, 1) 100%
+    );
     background-attachment: fixed;
 }
 
 a {
     color: white;
     font-family: var(--body-font);
-    font-size: 1.5vw;
+    font-size: 12px;
 }
 
 header {
@@ -27,7 +31,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px 200px;
-    /* background-color: #64dfdf; */
     background-color: rgba(42, 39, 48, 0.6);
     font-family: var(--display-font);
     font-size: 1vw;
@@ -41,20 +44,16 @@ main {
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin: auto;
+    margin: 100px auto;
 }
 
 .module {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border-radius: 5%;
     color: white;
-    /* background-color: #64dfdf; */
     background-color: rgba(42, 39, 48, 0.45);
-    /* height: auto;
-    width: auto; */
 }
 
 img#logo {
@@ -63,11 +62,16 @@ img#logo {
 
 button {
     font-family: var(--display-font);
-    font-size:  10px;
-    background-color: #6A60CE;
+    font-size: 10px;
+    background-color: #6a60ce;
     height: 45px;
-    width: 150px;
+    width: auto;
+    padding: 15px;
     color: white;
     border: 0;
     border-radius: 15px;
+}
+
+button:active {
+    filter: drop-shadow(2px 2px 2px rgb(3, 3, 3));
 }

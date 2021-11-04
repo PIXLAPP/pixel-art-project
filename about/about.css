@@ -4,8 +4,13 @@ main {
     width: 100%;
 }
 
+h2 {
+    margin: 0;
+    filter: drop-shadow(2px 2px 1px rgb(2, 2, 2));
+}
+
 .profile-container {
-    margin-top: 50px;
+    margin: 0 25px 50px 25px;
     padding: 50px;
 }
 
@@ -26,7 +31,12 @@ main {
     align-items: center;
     gap: 10px;
     width: 200px;
+    height: auto;
+    padding: 15px;
     font-size: 12px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(2, 2, 2, 0.2);
 }
 
 .profile a {
@@ -37,4 +47,8 @@ main {
     height: 125px;
     width: 125px;
     border-radius: 50%;
+}
+
+.names {
+    font-size: 14px;
 }
