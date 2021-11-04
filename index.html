@@ -31,9 +31,8 @@
                 />
                 <a href="./gallery">View Gallery</a>
                 <p id="welcome-message">
-                    Welcome to PIXL! Make some pixel-y art by using the tools to
-                    fill in pixels with different colors to create all kinds of
-                    different shapes and images.
+                    Welcome to PIXL! Fill in pixels with different colors to
+                    create all kinds of pixel-y art.
                 </p>
                 <div class="inputs">
                     <label>
@@ -46,13 +45,23 @@
                     </label>
                     <label>
                         Height
-                        <input type="number" id="height-input" placeholder="Height" value="10">
+                        <input
+                            type="number"
+                            id="height-input"
+                            placeholder="Height"
+                            value="10"
+                        />
                     </label>
                     <label>
                         Width
-                        <input type="number" id="width-input" placeholder="Width" value="10">
+                        <input
+                            type="number"
+                            id="width-input"
+                            placeholder="Width"
+                            value="10"
+                        />
                     </label>
-                </div> 
+                </div>
                 <button id="submit-title">START</button>
             </section>
             <section
@@ -63,28 +72,30 @@
                 <div id="canvas"></div>
                 <div class="toolchest">
                     <div class="color-tools">
-                    <label>
-                        <input type="color" id="color-select">
-                        <img src="./assets/palette2.png" id="color-select-img">
-                    </label>
-                    <label>
-                        <input type="radio" name="tools" id="pencil" />
-                        <img src="./assets/pencil.png" alt="">
-                        
-                    </label>
-                    <label>
-                        <input type="radio" name="tools" id="eraser" />
-                        <img src="./assets/eraser.png" alt="">
-                        
-                    </label>
-    
-                    <label>
-                        <input type="radio" name="tools" id="rainbow"/>
-                        <img src="./assets/rainbowheart.png" alt="">
-    
-                    </label>
-                </div>
-                    <button class="clear-canvas"><img src="./assets/trash.png" alt=""></button>
+                        <label>
+                            <img
+                                src="./assets/palette2.png"
+                                id="color-select-img"
+                            />
+                            <input type="color" id="color-select" />
+                        </label>
+                        <label>
+                            <input type="radio" name="tools" id="pencil" />
+                            <img src="./assets/pencil.png" alt="" />
+                        </label>
+                        <label>
+                            <input type="radio" name="tools" id="eraser" />
+                            <img src="./assets/eraser.png" alt="" />
+                        </label>
+
+                        <label>
+                            <input type="radio" name="tools" id="rainbow" />
+                            <img src="./assets/rainbowheart.png" alt="" />
+                        </label>
+                    </div>
+                    <button class="clear-canvas">
+                        <img src="./assets/trash.png" alt="" />
+                    </button>
                 </div>
                 <button id="save-image">SAVE</button>
             </section>
