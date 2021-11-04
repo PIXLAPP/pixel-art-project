@@ -31,7 +31,10 @@ document.body.onmousedown = function(){
     mousedown++;
 };
 document.body.onmouseup = function(){
-    mousedown--;
+    mousedown = 0;
+};
+document.body.oncontextmenu = function(){
+    mousedown = 0;
 };
 
 if (!localStorage.getItem('ACTIVEIMAGE')) {
@@ -55,14 +58,12 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
         mousedown++;
     };
     document.body.onmouseup = function(){
-        mousedown--;
+        mousedown = 0;
     };
 
     document.body.oncontextmenu = function(){
         mousedown = 0;
     };
-
-
     
     for (let i = 0; i < canvasDivs.length; i++) {
         canvasDivs[i].addEventListener('mouseenter', () => {
