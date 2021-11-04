@@ -6,12 +6,28 @@ const galleryContainer = document.querySelector('.gallery-container__cards');
 
 function renderGalleryImage(imageObject) {
     const canvas = document.createElement('div');
+    canvas.style.gridTemplateColumns = `repeat(${imageObject.width}, 1fr)`;
+    canvas.style.gridTemplateRows = `repeat(${imageObject.height}, 1fr)`;
     const colorArray = imageObject.colors;
     const area = imageObject.height * imageObject.width;
     for (let i = 0; i < area; i++) {
         const pixel = document.createElement('div');
         pixel.style.backgroundColor = colorArray[i];
         pixel.classList.add('pixel-div');
+        if (imageObject.height === imageObject.width) {
+            pixel.style.width = `${Math.round(100 / imageObject.height)}px)`;
+            pixel.style.height = `${Math.round(100 / imageObject.height)}px`;
+        } else if (imageObject.height > imageObject.width) {
+            pixel.style.width = `${Math.round(100 / imageObject.height)}px`;
+            pixel.style.height = `${Math.round(100 / imageObject.height)}px`;
+            canvas.style.height = '100px';
+            canvas.style.width = `${Math.round(imageObject.width * (100 / imageObject.height))}px`;
+        } else {
+            pixel.style.width = `${Math.round(100 / imageObject.width)}px`;
+            pixel.style.height = `${Math.round(100 / imageObject.width)}px`;
+            canvas.style.width = '100px';
+            canvas.style.height = `${Math.round(imageObject.height * (100 / imageObject.width))}px`;
+        }
         canvas.append(pixel);
     }
     return canvas;
