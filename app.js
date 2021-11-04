@@ -55,6 +55,7 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
                 if (rainbowIndex === 7) {
                     rainbowIndex = 0;
                     canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
+                    rainbowIndex++;
                 } else {
                     canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
                     rainbowIndex++;
@@ -120,6 +121,7 @@ startBtn.addEventListener('click', () => {
                     if (rainbowIndex === 7) {
                         rainbowIndex = 0;
                         canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
+                        rainbowIndex++;
                     } else {
                         canvasDivs[i].style.backgroundColor = rainbowArray[rainbowIndex];
                         rainbowIndex++;
