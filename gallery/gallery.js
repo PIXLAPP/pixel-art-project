@@ -1,8 +1,10 @@
 import { getStorage, setStorage } from '../utils.js';
+import { gallery } from '../assets/our-art.js';
 
 const keysObject = getStorage('KEYS');
 const keys = keysObject.keys;
 const galleryContainer = document.querySelector('.gallery-container__cards');
+
 
 function renderGalleryImage(imageObject) {
     const canvas = document.createElement('div');
@@ -49,6 +51,22 @@ for (let key of keys) {
     galleryCanvas.classList.add('gallery-canvas');
     const cardTitle = document.createElement('p');
     cardTitle.textContent = galleryImageObject.title;
+    galleryCard.append(galleryCanvas, cardTitle);
+
+    galleryContainer.append(galleryCard);
+}
+
+for (let images of gallery) {
+    const galleryCard = document.createElement('div');
+    galleryCard.classList.add('gallery-card');
+    galleryCard.addEventListener('click', () => {
+        setStorage('ACTIVEIMAGE', images);
+        window.location.replace('../index.html');
+    });
+    const galleryCanvas = renderGalleryImage(images);
+    galleryCanvas.classList.add('gallery-canvas');
+    const cardTitle = document.createElement('p');
+    cardTitle.textContent = images.title;
     galleryCard.append(galleryCanvas, cardTitle);
 
     galleryContainer.append(galleryCard);
