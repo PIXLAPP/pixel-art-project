@@ -13,8 +13,13 @@ main {
 
 h2 {
     text-transform: none;
-    margin: 40px 0 30px 0;
+    margin: 40px 0 15px 0;
     filter: drop-shadow(2px 2px 1px rgb(2, 2, 2));
+}
+
+.instructions {
+    text-transform: none;
+    margin-bottom: 25px;
 }
 
 .gallery-container__cards {
