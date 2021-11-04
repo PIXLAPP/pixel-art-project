@@ -4,9 +4,13 @@
 
 .welcome-container {
     gap: 25px;
-    height: 400px;
+    height: auto;
     width: 400px;
     padding: 25px;
+}
+
+input[type=number] {
+    width: 140px;
 }
 
 .welcome-container__logo {
@@ -48,8 +52,6 @@
     height: 500px;
     width: 500px;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
 }
 
 #display-title {
@@ -120,3 +122,6 @@ input[type="color"]::-webkit-color-swatch {
 .clear-canvas:active {
     filter: drop-shadow(2px 2px 2px rgb(3, 3, 3) )
 }
+
+.pixel-div:hover {
+    filter: drop-shadow(3px 3px 2px rgb(3, 3, 3, 0.5) );}

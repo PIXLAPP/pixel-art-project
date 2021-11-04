@@ -41,6 +41,14 @@ h2 {
      width: 110px;
 }
 
+.gallery-card:hover {
+    cursor: pointer;
+}
+
+.gallery-card:hover .gallery-canvas {
+    filter: drop-shadow(4px 4px 2px rgb(128,255,216,1) );
+}
+
 .gallery-card p {
     overflow-wrap: break-word;
 }
