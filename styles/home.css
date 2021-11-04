@@ -28,7 +28,7 @@ input[type=number] {
 }
 
 #artwork-title {
-    width: 40%;
+    width: 140px;
 }
 
 #submit-title {
@@ -120,8 +120,16 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .clear-canvas:active {
-    filter: drop-shadow(2px 2px 2px rgb(3, 3, 3) )
+    filter: drop-shadow(2px 2px 2px rgb(3, 3, 3) );
 }
 
 .pixel-div:hover {
-    filter: drop-shadow(3px 3px 2px rgb(3, 3, 3, 0.5) );}
+    filter: drop-shadow(3px 3px 2px rgb(3, 3, 3, 0.5) );
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}

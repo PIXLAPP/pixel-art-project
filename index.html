@@ -35,13 +35,24 @@
                     fill in pixels with different colors to create all kinds of
                     different shapes and images.
                 </p>
-                <input
-                    type="text"
-                    id="artwork-title"
-                    placeholder="Canvas Title"
-                />
-                <input type="number" id="height-input" placeholder="Height">
-                <input type="number" id="width-input" placeholder="Width">
+                <div class="inputs">
+                    <label>
+                        Title
+                        <input
+                            type="text"
+                            id="artwork-title"
+                            placeholder="Canvas Title"
+                        />
+                    </label>
+                    <label>
+                        Height
+                        <input type="number" id="height-input" placeholder="Height" value="10">
+                    </label>
+                    <label>
+                        Width
+                        <input type="number" id="width-input" placeholder="Width" value="10">
+                    </label>
+                </div> 
                 <button id="submit-title">START</button>
             </section>
             <section
