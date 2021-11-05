@@ -1,4 +1,4 @@
-import { getStorage, setStorage } from '../utils.js';
+import { getStorage, setStorage, titleKey } from '../utils.js';
 import { gallery } from '../assets/our-art.js';
 
 const keysObject = getStorage('KEYS');
@@ -57,17 +57,27 @@ for (let key of keys) {
 }
 
 for (let images of gallery) {
-    const galleryCard = document.createElement('div');
-    galleryCard.classList.add('gallery-card');
-    galleryCard.addEventListener('click', () => {
-        setStorage('ACTIVEIMAGE', images);
-        window.location.replace('../index.html');
-    });
-    const galleryCanvas = renderGalleryImage(images);
-    galleryCanvas.classList.add('gallery-canvas');
-    const cardTitle = document.createElement('p');
-    cardTitle.textContent = images.title;
-    galleryCard.append(galleryCanvas, cardTitle);
+    let exists = false;
+    for (let key of keys) {
+        if (key === titleKey(images.title)) {
+            exists = true;
+        }
+    }
+    if (!exists) {
+        const galleryCard = document.createElement('div');
+        galleryCard.classList.add('gallery-card');
+        galleryCard.addEventListener('click', () => {
+            setStorage('ACTIVEIMAGE', titleKey(images.title));
+            keys.push(titleKey(images.title));
+            setStorage('KEYS', keysObject);
+            setStorage(titleKey(images.title), images);
+            window.location.replace('../index.html');
+        });
+        const galleryCanvas = renderGalleryImage(images);
+        galleryCanvas.classList.add('gallery-canvas');
+        const cardTitle = document.createElement('p');
+        cardTitle.textContent = images.title;
+        galleryCard.append(galleryCanvas, cardTitle);
 
-    galleryContainer.append(galleryCard);
-}
+        galleryContainer.append(galleryCard);
+    }}
