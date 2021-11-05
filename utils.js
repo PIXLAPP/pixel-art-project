@@ -79,18 +79,18 @@ export function renderImage(imageObject) {
         if (imageObject.height === imageObject.width) {
             pixel.style.width = `${Math.round(500 / imageObject.height)}px)`;
             pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
-            canvas.style.height = '500px';
-            canvas.style.width = '500px';
+            canvas.style.height = `${(imageObject.height * Math.round(500 / imageObject.height))}px`;
+            canvas.style.width = `${(imageObject.width * Math.round(500 / imageObject.height))}px`;
         } else if (imageObject.height > imageObject.width) {
             pixel.style.width = `${Math.round(500 / imageObject.height)}px`;
             pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
-            canvas.style.height = `${Math.round(imageObject.height * (500 / imageObject.height))}px`;
-            canvas.style.width = `${Math.round(imageObject.width * (500 / imageObject.height))}px`;
+            canvas.style.height = `${Math.round(imageObject.height * Math.round(500 / imageObject.height))}px`;
+            canvas.style.width = `${Math.round(imageObject.width * Math.round(500 / imageObject.height))}px`;
         } else {
             pixel.style.width = `${Math.round(500 / imageObject.width)}px`;
             pixel.style.height = `${Math.round(500 / imageObject.width)}px`;
-            canvas.style.width = `${Math.round(imageObject.width * (500 / imageObject.width))}px`;
-            canvas.style.height = `${Math.round(imageObject.height * (500 / imageObject.width))}px`;
+            canvas.style.width = `${Math.round(imageObject.width * Math.round(500 / imageObject.width))}px`;
+            canvas.style.height = `${Math.round(imageObject.height * Math.round(500 / imageObject.width))}px`;
         }
         
         canvas.append(pixel);  
