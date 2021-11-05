@@ -19,13 +19,9 @@ h2 {
     width: 100%;
 }
 
-.gallery-thumb {
-    width: 125px;
-}
-
 .pixel-div {
-    width: 10px;
-    height: 10px;
+    width: auto;
+    height: auto;
 }
 
 .gallery-canvas {
