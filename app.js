@@ -218,10 +218,11 @@ paletteBtn.addEventListener('click', ()=>{
     pencil.checked = true;
 });
 
+const options = { scale: 1 };
+const div = document.getElementById('canvas');
 function takeshot() {
-    let div = document.getElementById('canvas');
     window.scrollTo(0, 0);
-    html2canvas(div).then(
+    html2canvas(div, options).then(
         function(canvas) {
             document
                 .getElementById('png-container')

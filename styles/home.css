@@ -50,11 +50,8 @@ input[type='number'] {
 
 #canvas {
     background-color: white;
-    /* width: 500px;
-    height: 500px; */
     display: grid;
-    margin: 0px 50px 10px 50px;
-    border: 5px black;
+    margin: 10px 50px 10px 50px;
     filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
 }
 
