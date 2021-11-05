@@ -26,8 +26,6 @@ export function createImage(title, heightInput, widthInput) {
     let x = widthInput / 2;
     let y = 1;
     if (isEven(widthInput) === true) {
-        
-
         for (let i = 0; i < halfArea; i++) {  
             if (isEven(y) === true) {
                 colorArray.push('rgb(243, 243, 244)', 'rgb(216, 216, 217)');
@@ -49,9 +47,11 @@ export function createImage(title, heightInput, widthInput) {
         for (let i = 0; i < halfArea; i++) {  
             colorArray.push('rgb(216, 216, 217)', 'rgb(243, 243, 244)'); 
         }
-    }
 
-            // colorArray.push('rgb(216, 216, 217)', 'rgb(254, 255, 254)', 'rgb(243, 243, 244)',); 
+    }
+    while (colorArray.length > area) {
+        colorArray.pop();
+    }
 
     let newImage = {
         title: title,
@@ -80,15 +80,17 @@ export function renderImage(imageObject) {
         if (imageObject.height === imageObject.width) {
             pixel.style.width = `${Math.round(500 / imageObject.height)}px)`;
             pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
+            canvas.style.height = '500px';
+            canvas.style.width = '500px';
         } else if (imageObject.height > imageObject.width) {
             pixel.style.width = `${Math.round(500 / imageObject.height)}px`;
             pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
-            canvas.style.height = '500px';
+            canvas.style.height = `${Math.round(imageObject.height * (500 / imageObject.height))}px`;
             canvas.style.width = `${Math.round(imageObject.width * (500 / imageObject.height))}px`;
         } else {
             pixel.style.width = `${Math.round(500 / imageObject.width)}px`;
             pixel.style.height = `${Math.round(500 / imageObject.width)}px`;
-            canvas.style.width = '500px';
+            canvas.style.width = `${Math.round(imageObject.width * (500 / imageObject.width))}px`;
             canvas.style.height = `${Math.round(imageObject.height * (500 / imageObject.width))}px`;
         }
         
