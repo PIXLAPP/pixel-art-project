@@ -34,7 +34,7 @@ let playlistIndex = 0;
 audioButton.addEventListener('click', () => {
     audio.src = `${playlist[playlistIndex]}`;
     playlistIndex++;
-    if (playlistIndex === playlist.legth) {
+    if (playlistIndex === playlist.length) {
         playlistIndex = 0;
     }
 });
@@ -56,7 +56,7 @@ document.body.oncontextmenu = function(){
 
 if (!localStorage.getItem('ACTIVEIMAGE')) {
     localStorage.removeItem('ACTIVEIMAGE');
-    // the above action is redundant, but needed to put something in this if statement
+
 } else {
     const activeImage = getStorage('ACTIVEIMAGE');
     const activeImageObject = getStorage(activeImage);

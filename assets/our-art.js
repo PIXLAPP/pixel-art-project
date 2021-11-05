@@ -431,7 +431,7 @@ export const image4 = {
 };
 
 export const image5 = {
-    title: 'Super Awesome Image',
+    title: 'super awesome image',
     height: 50,
     width: 50,
     colors: [
@@ -2939,7 +2939,7 @@ export const image5 = {
 };
 
 export const image6 = {
-    title: 'Pretty Pattern',
+    title: 'pretty pattern',
     height: 50,
     width: 50,
     colors: [
