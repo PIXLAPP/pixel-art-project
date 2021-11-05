@@ -4,6 +4,7 @@ main {
 
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
 .welcome-container {
@@ -157,20 +158,27 @@ input[type='color']::-webkit-color-swatch {
 }
 
 #png-container {
-    height: auto;
-    width: auto;
-    margin: 50px 0 50px 0px;
+    margin: auto auto 40px auto;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     border-radius: 5%;
     color: white;
     background-color: rgba(42, 39, 48, 0.45);
-    padding: 30px;
+    padding: 40px;
 }
 
-.test {
+#test {
     display: flex;
+    justify-content: center;
     margin: auto;
     filter: drop-shadow(3px 3px 2px rgb(2, 2, 2));
+}
+
+#save-download {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }

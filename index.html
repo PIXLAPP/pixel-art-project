@@ -98,26 +98,15 @@
                     </button>
                 </div>
                 <div class="save-buttons">
-                <button id="save-image">SAVE</button>
+                <button id="save-image">SAVE TO GALLERY</button>
                 <button id="download-image">DOWNLOAD</button>
             </div>
             </section>
-            <section>
-                <div id="png-container"></div>
-            </section>
+                <div id="png-container" class="hidden">
+                    <div id="rendered-img"></div>
+                    <button id="save-download" class="hidden">download</button>
+                </div>
         </main>
-        <script type="text/javascript">
-            // function takeshot() {
-            //     let div = document.getElementById('canvas');
-            //     html2canvas(div).then(
-            //         function (canvas) {
-            //             document
-            //             .getElementById('png-container')
-            //             .appendChild(canvas);
-            //             canvas.classList.add('test');
-            //         })
-            // }
-        </script>
         <script type="module" src="./app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.3.2/dist/html2canvas.min.js">
           </script>

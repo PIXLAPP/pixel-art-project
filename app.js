@@ -218,19 +218,31 @@ paletteBtn.addEventListener('click', ()=>{
     pencil.checked = true;
 });
 
-const options = { scale: 1 };
+const renderedImg = document.getElementById('rendered-img');
 const div = document.getElementById('canvas');
+const downloadContainer = document.getElementById('png-container');
+const saveDownload = document.getElementById('save-download');
 function takeshot() {
     window.scrollTo(0, 0);
-    html2canvas(div, options).then(
+    html2canvas(div).then(
         function(canvas) {
-            document
-                .getElementById('png-container')
-                .appendChild(canvas);
-            canvas.classList.add('test');
+            renderedImg.appendChild(canvas);
+            canvas.setAttribute('id', 'test');
         });
 }
 
 const downloadBtn = document.getElementById('download-image');
+downloadBtn.addEventListener('click', ()=>{
+    takeshot();
+    downloadContainer.classList.remove('hidden');
+    saveDownload.classList.remove('hidden');
 
-downloadBtn.addEventListener('click', takeshot);
+});
+
+saveDownload.addEventListener('click', ()=>{
+    const link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = test.toDataURL();
+    link.click();
+    link.delete;
+});
