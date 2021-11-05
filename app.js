@@ -24,9 +24,25 @@ const widthInput = document.getElementById('width-input');
 const homePageLogo = document.getElementById('logo');
 const rainbowArray = ['#f54242', '#f59642', '#f5e942', '#84f542', '#42ddf5', '#b15beb', '#f779b4'];
 const paletteBtn = document.getElementById('color-select-img');
+const audio = document.getElementById('audio-bit');
+const audioButton = document.getElementById('audio-button');
+const playlist = ['http://soundimage.org/wp-content/uploads/2017/07/Arcade-Puzzler.mp3', 'http://soundimage.org/wp-content/uploads/2017/04/Its-Raining-Pixels.mp3', 'http://soundimage.org/wp-content/uploads/2017/03/Arcade-Heroes.mp3', 'http://soundimage.org/wp-content/uploads/2017/03/Pixel-Puppies.mp3'];
+let playlistIndex = 0;
+
+
+audioButton.addEventListener('click', () => {
+    audio.src = `${playlist[playlistIndex]}`;
+    playlistIndex++;
+    if (playlistIndex === playlist.legth) {
+        playlistIndex = 0;
+    }
+});
+
 let rainbowIndex = 0;
 let eraserBackgroundCanvas = {};
 let mousedown = 0;
+
+
 document.body.onmousedown = function(){
     mousedown++;
 };

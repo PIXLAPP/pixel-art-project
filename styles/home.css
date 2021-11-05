@@ -159,3 +159,7 @@ input[type='color']::-webkit-color-swatch {
 .inner-canvas {
     display: flex;
 }
+
+audio, #audio-button {
+    margin: 10px;
+}
