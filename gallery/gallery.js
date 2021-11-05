@@ -24,13 +24,13 @@ function renderGalleryImage(imageObject) {
         } else if (imageObject.height > imageObject.width) {
             pixel.style.width = `${Math.round(100 / imageObject.height)}px`;
             pixel.style.height = `${Math.round(100 / imageObject.height)}px`;
-            canvas.style.height = `${Math.round(imageObject.height * (100 / imageObject.height))}px`;
-            canvas.style.width = `${Math.round(imageObject.width * (100 / imageObject.height))}px`;
+            canvas.style.height = `${Math.round(imageObject.height * Math.round(100 / imageObject.height))}px`;
+            canvas.style.width = `${Math.round(imageObject.width * Math.round(100 / imageObject.height))}px`;
         } else {
             pixel.style.width = `${Math.round(100 / imageObject.width)}px`;
             pixel.style.height = `${Math.round(100 / imageObject.width)}px`;
-            canvas.style.width = `${Math.round(imageObject.width * (100 / imageObject.width))}px`;
-            canvas.style.height = `${Math.round(imageObject.height * (100 / imageObject.width))}px`;
+            canvas.style.width = `${Math.round(imageObject.width * Math.round(100 / imageObject.width))}px`;
+            canvas.style.height = `${Math.round(imageObject.height * Math.round(100 / imageObject.width))}px`;
         }
         canvas.append(pixel);
     }
