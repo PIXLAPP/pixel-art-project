@@ -4,6 +4,7 @@ main {
 
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
 .welcome-container {
@@ -50,10 +51,8 @@ input[type='number'] {
 
 #canvas {
     background-color: white;
-    height: auto;
-    width: 500px;
     display: grid;
-    margin: 0px 50px 10px 50px;
+    margin: 10px 50px 10px 50px;
     filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
 }
 
@@ -122,12 +121,6 @@ input[type='color']::-webkit-color-swatch {
     gap: 10px;
 }
 
-#save-image {
-    margin: 0px 0px 15px 0px;
-    font-size: 1rem;
-    letter-spacing: 3px;
-}
-
 .clear-canvas {
     background-color: transparent;
     border: none;
@@ -158,4 +151,34 @@ input[type='color']::-webkit-color-swatch {
 
 .inner-canvas {
     display: flex;
+}
+
+.save-buttons {
+    margin-bottom: 15px;
+}
+
+#png-container {
+    margin: auto auto 40px auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 5%;
+    color: white;
+    background-color: rgba(42, 39, 48, 0.45);
+    padding: 40px;
+}
+
+#test {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    filter: drop-shadow(3px 3px 2px rgb(2, 2, 2));
+}
+
+#save-download {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }

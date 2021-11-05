@@ -1,17 +1,11 @@
-main {
-    display: flex;
-    justify-content: flex-start;
-    text-transform: uppercase;
-}
-
 .gallery-container {
-    /* margin: 50px 0 50px 0; */
+    margin: 50px 0 50px 0;
     height: auto;
-    width: 600px;
-    padding: 5px;
+    width: 550px;
 }
 
 h2 {
+    margin: 50px 0 50px 0;
     text-transform: none;
     margin: 40px 0 15px 0;
     filter: drop-shadow(2px 2px 1px rgb(2, 2, 2));
@@ -31,7 +25,6 @@ h2 {
     justify-content: center;
     padding: 10px;
     width: 100%;
-    margin-bottom: 25px;
 }
 
 .pixel-div {
@@ -45,12 +38,11 @@ h2 {
     grid-template-rows: repeat(10, 1fr);
     height: 100px;
     width: 100px;
-    filter: drop-shadow(4px 4px 2px rgb(2, 2, 2));
 }
 
 .gallery-card {
     text-align: center;
-    width: 110px;
+     width: 110px;
 }
 
 .gallery-card:hover {
@@ -58,7 +50,7 @@ h2 {
 }
 
 .gallery-card:hover .gallery-canvas {
-    filter: drop-shadow(6px 6px 4px rgb(2, 2, 2));
+    filter: drop-shadow(4px 4px 2px rgb(128,255,216,1) );
 }
 
 .gallery-card p {
