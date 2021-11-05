@@ -19,8 +19,8 @@ function renderGalleryImage(imageObject) {
         if (imageObject.height === imageObject.width) {
             pixel.style.width = `${Math.round(100 / imageObject.height)}px)`;
             pixel.style.height = `${Math.round(100 / imageObject.height)}px`;
-            canvas.style.height = '100px';
-            canvas.style.width = '100px';
+            canvas.style.height = `${(imageObject.height * Math.round(100 / imageObject.height))}px`;
+            canvas.style.width = `${(imageObject.width * Math.round(100 / imageObject.height))}px`;
         } else if (imageObject.height > imageObject.width) {
             pixel.style.width = `${Math.round(100 / imageObject.height)}px`;
             pixel.style.height = `${Math.round(100 / imageObject.height)}px`;

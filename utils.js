@@ -80,8 +80,8 @@ export function renderImage(imageObject) {
         if (imageObject.height === imageObject.width) {
             pixel.style.width = `${Math.round(500 / imageObject.height)}px)`;
             pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
-            canvas.style.height = '500px';
-            canvas.style.width = '500px';
+            canvas.style.height = `${(imageObject.height * Math.round(500 / imageObject.height))}px`;
+            canvas.style.width = `${(imageObject.width * Math.round(500 / imageObject.height))}px`;
         } else if (imageObject.height > imageObject.width) {
             pixel.style.width = `${Math.round(500 / imageObject.height)}px`;
             pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
