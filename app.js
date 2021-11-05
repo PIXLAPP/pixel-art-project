@@ -34,7 +34,7 @@ let playlistIndex = 0;
 audioButton.addEventListener('click', () => {
     audio.src = `${playlist[playlistIndex]}`;
     playlistIndex++;
-    if (playlistIndex === playlist.legth) {
+    if (playlistIndex === playlist.length) {
         playlistIndex = 0;
     }
 });
