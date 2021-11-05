@@ -153,6 +153,10 @@ input[type='color']::-webkit-color-swatch {
     display: flex;
 }
 
+audio, #audio-button {
+    margin: 10px;
+}
+
 .save-buttons {
     margin-bottom: 15px;
 }
