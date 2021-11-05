@@ -38,6 +38,7 @@ h2 {
     grid-template-rows: repeat(10, 1fr);
     height: 100px;
     width: 100px;
+    filter: drop-shadow(4px 4px 2px rgb(0, 0, 0) );
 }
 
 .gallery-card {
@@ -50,7 +51,7 @@ h2 {
 }
 
 .gallery-card:hover .gallery-canvas {
-    filter: drop-shadow(4px 4px 2px rgb(128,255,216,1) );
+    filter: drop-shadow(6px 6px 2px rgb(0, 0, 0) );
 }
 
 .gallery-card p {
