@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
     createImage,
     getStorage,
@@ -216,3 +217,19 @@ saveBtn.addEventListener('click', () => {
 paletteBtn.addEventListener('click', ()=>{
     pencil.checked = true;
 });
+
+function takeshot() {
+    let div = document.getElementById('canvas');
+    window.scrollTo(0, 0);
+    html2canvas(div).then(
+        function(canvas) {
+            document
+                .getElementById('png-container')
+                .appendChild(canvas);
+            canvas.classList.add('test');
+        });
+}
+
+const downloadBtn = document.getElementById('download-image');
+
+downloadBtn.addEventListener('click', takeshot);
