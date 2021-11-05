@@ -21,7 +21,6 @@ function isEven(num) {
 export function createImage(title, heightInput, widthInput) {
     let area = heightInput * widthInput;
     let halfArea = Math.ceil(area / 2);
-    // let thirdArea = Math.ceil(area / 3);
     let colorArray = [];
     let x = widthInput / 2;
     let y = 1;
@@ -94,7 +93,6 @@ export function renderImage(imageObject) {
             canvas.style.height = `${Math.round(imageObject.height * (500 / imageObject.width))}px`;
         }
         
-
         canvas.append(pixel);  
     }
 }

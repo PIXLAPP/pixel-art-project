@@ -9,7 +9,6 @@ import {
 } from './utils.js';
 
 let imageObject = {};
-// let currentCanvas = createImage('coolTitle', 10, 10);
 const header = document.querySelector('.header');
 const canvasModule = document.getElementById('canvas-container');
 const welcomeModule = document.querySelector('.welcome-container');
@@ -30,7 +29,6 @@ const audioButton = document.getElementById('audio-button');
 const playlist = ['http://soundimage.org/wp-content/uploads/2017/07/Arcade-Puzzler.mp3', 'http://soundimage.org/wp-content/uploads/2017/04/Its-Raining-Pixels.mp3', 'http://soundimage.org/wp-content/uploads/2017/03/Arcade-Heroes.mp3', 'http://soundimage.org/wp-content/uploads/2017/03/Pixel-Puppies.mp3'];
 let playlistIndex = 0;
 
-
 audioButton.addEventListener('click', () => {
     audio.src = `${playlist[playlistIndex]}`;
     playlistIndex++;
@@ -42,7 +40,6 @@ audioButton.addEventListener('click', () => {
 let rainbowIndex = 0;
 let eraserBackgroundCanvas = {};
 let mousedown = 0;
-
 
 document.body.onmousedown = function(){
     mousedown++;
@@ -60,13 +57,14 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
 } else {
     const activeImage = getStorage('ACTIVEIMAGE');
     const activeImageObject = getStorage(activeImage);
-    // imageObject = activeImageObject;
     eraserBackgroundCanvas = createImage('eraser background', activeImageObject.height, activeImageObject.width);
     welcomeModule.classList.add('hidden');
     header.classList.remove('hidden');
     canvasModule.classList.remove('hidden');
     displayTitle.textContent = activeImageObject.title;
+
     renderImage(activeImageObject);
+
     let canvasDivs = document.querySelectorAll('.pixel-div');
     rainbowIndex = 0;
     
@@ -122,8 +120,8 @@ if (!localStorage.getItem('ACTIVEIMAGE')) {
         });
     }
     pencil.checked = true;
-
 }
+
 let canvasDivs = document.querySelectorAll('.pixel-div');
 
 homePageLogo.addEventListener('click', () => {
@@ -153,10 +151,10 @@ startBtn.addEventListener('click', () => {
     } else {
         eraserBackgroundCanvas = createImage('eraser background', Number(heightInput.value), Number(widthInput.value));
         const newImage = createImage(titleString, Number(heightInput.value), Number(widthInput.value));
+
         renderImage(newImage);
-    
         setStorage(title, newImage);
-    // push title to array in KEYS object
+
         const keyArrayObject = getStorage('KEYS') || { keys: [] };
         const keyArray = keyArrayObject.keys;
         keyArray.push(title);
@@ -238,16 +236,18 @@ const renderedImg = document.getElementById('rendered-img');
 const div = document.getElementById('canvas');
 const downloadContainer = document.getElementById('png-container');
 const saveDownload = document.getElementById('save-download');
+
 function takeshot() {
     window.scrollTo(0, 0);
     html2canvas(div).then(
         function(canvas) {
             renderedImg.appendChild(canvas);
-            canvas.setAttribute('id', 'test');
+            canvas.setAttribute('id', 'rendered');
         });
 }
 
 const downloadBtn = document.getElementById('download-image');
+
 downloadBtn.addEventListener('click', ()=>{
     takeshot();
     downloadContainer.classList.remove('hidden');
@@ -258,7 +258,7 @@ downloadBtn.addEventListener('click', ()=>{
 saveDownload.addEventListener('click', ()=>{
     const link = document.createElement('a');
     link.download = 'download.png';
-    link.href = test.toDataURL();
+    link.href = rendered.toDataURL();
     link.click();
     link.delete;
 });

@@ -174,7 +174,7 @@ audio, #audio-button {
     padding: 40px;
 }
 
-#test {
+#rendered {
     display: flex;
     justify-content: center;
     margin: auto;

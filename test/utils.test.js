@@ -8,7 +8,6 @@ import {
 
 const test = QUnit.test;
 
-// Test Passing
 test('setStorage should stringify the imageObject', (expect) => {
     localStorage.removeItem('TEST');
 
@@ -26,7 +25,6 @@ test('setStorage should stringify the imageObject', (expect) => {
     expect.deepEqual(testObject, actual);
 });
 
-//Test Passing
 test('getStorage should return the imageObject', (expect) => {
     localStorage.removeItem('TEST');
 
@@ -45,20 +43,15 @@ test('getStorage should return the imageObject', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-//Test Passing
 test('titleKey should remove spaces from image title and capitalize string', (expect) => {
-    //arrange
     const imageTitle = 'title with spaces';
     const expected = 'TITLEWITHSPACES';
 
-    //act
     const actual = titleKey(imageTitle);
 
-    //expect
     expect.equal(actual, expected);
 });
 
-// Test Passing
 test('createImage should initialize a new image object', (expect) => {
     const newImage = {
         title: 'Awesome Artwork',
@@ -174,7 +167,6 @@ test('createImage should initialize a new image object', (expect) => {
     expect.deepEqual(newImage, actual);
 });
 
-// New Test
 test('updateImage should add an array of color values to the image object', (expect) => {
     const colorsArray = ['ffffff', 'aaaaaa', '000000', '123456', 'f0f0f0'];
 
